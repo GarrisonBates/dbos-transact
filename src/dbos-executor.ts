@@ -342,7 +342,7 @@ export class DBOSExecutor implements DBOSExecutorContext {
           this.entities = (this.entities as Function[]).concat(reg.ormEntities as Function[]);
         } else {
           /**
-           * With Drizzle, we need to take an object of entities, since the object keys are used to access the entities:
+           * With Drizzle, we need to take an object of entities, since the object keys are used to access the entities from ctx.client.query:
            */
           this.entities = { ...this.entities, ...reg.ormEntities };
         }
